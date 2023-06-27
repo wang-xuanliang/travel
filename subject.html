@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>游玩类别</title>
+    <link rel="shortcut icon" href="image/go.ico" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/subject.css'>
+</head>
+<body>
+ <header>
+    
+    <h1 class="logo">go where</h1>
+    <nav>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="subject.html">游玩类别</a></li>
+            <li><a href="region.html">游玩地区</a></li>
+            <li><a href="message.html">留言板</a></li>
+            <li><a href="#">更多信息</a></li>
+        </ul>
+    </nav>
+     <a href="#" class="search"><img class="icon" src="image/search.svg" alt="search"></a>
+     <a href="#"><button>登录</button></a>
+     <a class="login" href="#">注册</a>
+ </header>
+ <div class="guide">
+    <a href="index.html">首页</a> > <a href="subject.html">游玩项目</a>
+</div>
+<div class="mini-nav">
+    <a class="nav-item" id="all">全部</a>
+    <a class="nav-item" id="sc">自然风光</a>
+    <a class="nav-item" id="hist">历史古迹</a>
+</div>
+<div class="group" id="group">
+    <div class="box" id="history1">
+      <a href="tower.html"><img src="image/木塔.jpg" alt="Image 1"></a>
+    </div>
+    <div class="box" id="history2">
+      <a ></a><img src="image/鸟尊.jpg" alt="Image 2"></a>
+    </div>
+    <div class="box" id="scenery1">
+      <a><img src="image/黄山.jpeg" alt="Image 3"></a>
+    </div>
+  </div>
+
+<script>
+    var all = document.getElementById("all");
+    var group = document.getElementById("group");
+    var hist = document.getElementById("hist");
+    var sc = document.getElementById("sc"); 
+    var hist1 = document.getElementById("history1");
+    var hist2 = document.getElementById("history2");
+    var sc1 = document.getElementById("scenery1"); 
+
+    all.addEventListener("click",function(){
+        for(var i=0;i<3;i++)
+            group.children[i].style.display ="block";
+    });
+
+    sc.addEventListener("click",function(){
+        for(var i=0;i<3;i++)
+            group.children[i].style.display ="none";
+        sc1.style.display = "block";
+    });
+
+    hist.addEventListener("click",function(){
+        for(var i=0;i<3;i++)
+            group.children[i].style.display ="none";
+        hist1.style.display = "block";
+        hist2.style.display = "block";
+    });
+</script>
+</body>
+</html>

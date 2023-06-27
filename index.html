@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>go where</title>
+    <link rel="shortcut icon" href="image/go.ico" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/index.css'>
+
+</head>
+<body>
+ <header>
+    <a href="index.html"><h1 class="logo">go where</h1></a>
+    <nav>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="subject.html">游玩类别</a></li>
+            <li><a href="region.html">游玩地区</a></li>
+            <li><a href="message.html">留言板</a></li>
+            <li><a href="#">更多信息</a></li>
+            <li><a href="#" class="search"><img class="icon" src="image/search_white.svg" alt="search"></a></li>
+            <li><a href="#"><button>登录</button></a></li>
+            <li><a class="login" href="#">注册</a></li>
+        </ul>
+    </nav>
+ </header>
+ <div class="slider-wrap">
+     <div class="slider-items" id="items">
+		     <li><a href="#"><img id="nav-img1" src="image/白马寺.jpeg" alt="image1" /></a></li>
+         <li><a href="#"><img src="image/晋祠.jpeg" alt="image2" /></a></li>
+         <li><a href="#"><img src="image/江郎山.jpeg" alt="image3"/></a></li>
+     </div>
+     <div class="slider-nav">
+         <div class="prev" id="prev"><img src="image/left.svg" alt="prev"></div>
+         <div class="slider-thumbnails" id="thumbnails">
+			       <img  id="img1" src="image/白马寺.jpeg" alt="image1">
+             <img  id="img2" src="image/晋祠.jpeg" alt="image2">
+             <img  id="img3" src="image/江郎山.jpeg" alt="image3">
+         </div>
+		 <div class="slider-next" id="next"><img src="image/right.svg" alt="next"></div>
+     </div>
+  </div> 
+ 
+<h1 class="head1">热门旅游城市</h1>
+<div class="group">
+  <div class="box">
+    <a href=""><img src="image/洛阳.jpeg" alt="Image 1" style="height: 100%;"></a>
+  </div>
+  <div class="box">
+    <a href=""></a><img src="image/background.png" alt="Image 2"></a>
+  </div>
+  <div class="box">
+    <a href=""></a><img src="image/衢州.jpeg" alt="Image 3"></a>
+  </div>
+</div>
+
+
+<div class="footer">
+  <br>
+  <p>©小组制作</p>
+</div>
+<script>
+
+
+
+  // 添加滚动事件
+window.addEventListener('scroll', function() {
+    //获取元素
+    var header = document.querySelector("header");
+    // 添加类
+    header.classList.toggle("sticky", window.scrollY > 0 )
+});
+
+	var nextBtn = document.getElementById("next");
+	var thumbnails = [document.getElementById("img1"), document.getElementById("img2"), document.getElementById("img3")];
+	//var thumbnails = document.querySelectorAll('.slider-thumbnails img');
+	var sliderItems = document.getElementById("items");
+	var prevBtn = document.getElementById("prev");
+  var length =  document.getElementById("nav-img1");
+  var high;
+  length.onload=function(){
+    high=length.height;
+    console.log(high);
+  };
+	var currentIndex = 0;
+    var timer = null;
+
+  window.addEventListener('load', function() {
+  var firstImage = document.getElementById('nav-img1');
+  var sliderItems = document.getElementById('items');
+  sliderItems.style.height = firstImage.height + 'px';
+});
+
+function showImage(index) {
+  //var translateY = -index * window.innerHeight; // 使用视口高度
+  //sliderItems.style.transform = 'translateY(' + translateY + 'px)';
+  sliderItems.style.transform = 'translateY(' + (-index * high) + 'px)';
+  thumbnails[currentIndex].classList.remove('active');
+  thumbnails[index].classList.add('active');
+  currentIndex = index;
+}
+
+function prevImage() {
+  var index = currentIndex - 1;
+  if (index < 0) {
+    index = 2;
+  }
+  showImage(index);
+}
+
+function nextImage() {
+  var index = currentIndex + 1;
+  if (index > 2) {
+    index = 0;
+  }
+  showImage(index);
+}
+
+prevBtn.addEventListener('click', prevImage);
+nextBtn.addEventListener('click', nextImage);
+
+for (var i = 0; i < thumbnails.length; i++) {
+  thumbnails[i].addEventListener('click', function() {
+    var index = Array.prototype.indexOf.call(thumbnails, this);
+    showImage(index);
+  });
+}
+
+timer = setInterval(nextImage, 8000);
+
+</script>
+</body>
+</html>

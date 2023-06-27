@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>游玩地区</title>
+    <link rel="shortcut icon" href="image/go.ico" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/header.css'>
+    <link rel='stylesheet' type='text/css' href='css/region.css'>
+    <script src="js/echarts.js" ></script>
+    <script src="js/china.js"></script>
+</head>
+<body>
+ <header class="header">
+    <h1 class="logo">go where</h1>
+    <nav>
+        <ul class="nav">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="subject.html">游玩类别</a></li>
+            <li><a href="region.html">游玩地区</a></li>
+            <li><a href="message.html">留言板</a></li>
+            <li><a href="#">更多信息</a></li>
+        </ul>
+    </nav>
+     <a href="#" class="search"><img class="icon" src="image/search.svg" alt="search"></a>
+     <a href="#"><button>登录</button></a>
+     <a class="login" href="#">注册</a>
+ </header>
+
+ <div id="bj" class="bj">北京</div>
+<div id="ty" class="ty">太原</div>
+<div id="ly" class="ly">洛阳</div>
+<div id="qz" class="qz">衢州</div>
+<div id="main" style="width: 800px;height: 600px;" class="map"></div>
+    <script>
+        const data_list = []
+        const data_value_list= []
+        const option = {
+            series: [
+                {
+                    name: '数据',
+                    type: 'map',
+                    mapType: 'china',
+                    roam: false,
+                    itemStyle: {
+                        normal: { label: { show: true } },
+                        emphasis: { label: { show: true } }
+                    },
+                    data: data_list
+                }
+            ]
+        };
+        ec_map = echarts.init(document.getElementById('main'));
+        ec_map.setOption(option)
+    </script>
+<div class="group2" id="group2">
+  <div class="box2" id="taiyuan">
+    <a href="taiyuan.html"><img src="image/background.png" alt="Image 1"></a>
+  </div>
+  <div class="box2" id="henan">
+    <a ></a><img src="image/衢州.jpeg" alt="Image 2"></a>
+  </div>
+  <div class="box2" id="quzhou">
+    <a><img src="image/洛阳.jpeg" alt="Image 3"></a>
+  </div>
+  <div class="box2" id="beijing">
+    <a><img src="image/北京.jpeg" alt="Image 4"></a>
+  </div>
+</div>
+<script>
+    var m_bj = document.getElementById("bj");
+    var m_ty = document.getElementById("ty");
+    var m_ly = document.getElementById("ly");
+    var m_qz = document.getElementById("qz");
+    var group2 = document.getElementById("group2");
+    var tai = document.getElementById("taiyuan");
+    var he = document.getElementById("henan");
+    var qu = document.getElementById("quzhou"); 
+    var bei = document.getElementById("beijing"); 
+
+    m_ty.addEventListener('click', function() {
+        for(var i=0;i<4;i++)
+            group2.children[i].style.display ="none";
+        tai.style.display = "block";
+    });
+    m_ly.addEventListener('click', function() {
+        for(var i=0;i<4;i++)
+            group2.children[i].style.display ="none";
+        he.style.display = "block";
+    });
+    m_qz.addEventListener('click', function() {
+        for(var i=0;i<4;i++)
+            group2.children[i].style.display ="none";
+        qu.style.display = "block";
+    });
+    m_bj.addEventListener('click', function() {
+        for(var i=0;i<4;i++)
+            group2.children[i].style.display ="none";
+        bei.style.display = "block";
+    });
+
+    function all(){
+        for(var i=0;i<4;i++)
+            group2.children[i].style.display ="block";
+    }
+    timer = setInterval(all, 5000);
+</script>
+</body>
+</html>
