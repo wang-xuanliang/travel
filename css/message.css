@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    position: relative;
+    min-height: 150vh;
+}
+
+li,a{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    padding: 30px 5%;
+    height: 30px;
+    background-color: #ffffff;
+}
+
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+    background-color: #ffffff;
+}
+
+.nav{
+    list-style: none;
+    background-color: #ffffff;
+}
+
+.nav li{
+    display: inline-block;
+    padding: 0px 20px;
+    margin-right: 10px;
+}
+
+.nav li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav li a:hover{
+    color: #a9844f;
+}
+
+button{
+    padding: 9px 25px;
+    color: #F0FFFF;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    background-color: rgb(169, 116, 9);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover{
+    background-color: rgba(169, 143, 56, 0.7);
+}
+
+.login{
+    color: #000000;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.search{
+    margin: 0 40px;
+    padding-top: 5px;
+}
+
+.guide{
+    font-size: 12px;
+    font-family: 华文行楷;
+    margin-top: 80px;
+    padding-left: 100px;
+}
+
+.guide a{
+    background-color:transparent;
+}
+
+.icon{
+    background-color: #ffffff;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #898885;
+    color: #ccd2d2;
+    text-align: center;
+}
+
+.p-bottom{
+    background-color: #898885;
+}

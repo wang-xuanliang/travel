@@ -1,0 +1,83 @@
+.map{
+    position: relative;
+    top:40px;
+  }
+
+  .group2 {
+    position: relative;
+    display:flex;
+    top:-431px;
+    width: 40%;
+    align-items: stretch; /* align-items属性定义项目在交叉轴上如何对齐 stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。 */
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-left: 54%;
+  }
+  
+  .box2 {
+    width: 160px;
+    height: 90px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #f4f2f0;
+    border-radius: 5px;
+    margin: 50px 20px;
+    border-style:outset;
+  }
+  
+  .box2 img {
+    cursor: pointer;
+    width: 100%;
+    height:100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .box2:hover img {
+    transform: scale(1.1);
+  }
+
+  .bj{
+    color: rgb(20, 18, 18);
+    cursor: pointer;
+    font-size: 15px;
+    position:relative;
+    top:343px;
+    left: 513px;
+    margin-right: 96%;
+    padding: 2px 2px;
+    z-index: 200;
+  }
+
+  .ty{
+    color: transparent;
+    cursor: pointer;
+    font-size: 10px;
+    position:relative;
+    top:353px;
+    left: 469px;
+    margin-right: 98%;
+    padding: 2px 2px;
+    z-index: 200;
+  }
+  .ly{
+    color: transparent;
+    cursor: pointer;
+    font-size: 10px;
+    position:relative;
+    top:393px;
+    left: 482px;
+    margin-right: 98%;
+    padding: 2px 2px;
+    z-index: 200;
+  }
+  .qz{
+    color: transparent;
+    cursor: pointer;
+    font-size: 10px;
+    position:relative;
+    top:437px;
+    left: 548px;
+    margin-right: 98%;
+    padding: 2px 2px;
+    z-index: 200;
+  }
